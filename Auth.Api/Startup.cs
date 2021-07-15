@@ -1,3 +1,5 @@
+using Auth.Service.Implement;
+using Auth.Service.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,8 @@ namespace Auth.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth.Api", Version = "v1" });
             });
+
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

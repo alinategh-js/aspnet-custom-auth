@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Auth.Api.Controllers
 {
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class StartController : ControllerBase
     {
         public StartController() { }
