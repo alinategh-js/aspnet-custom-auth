@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Auth.Domain\Auth.Domain.csproj" />
   </ItemGroup>
 
@@ -18,7 +23,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\ServiceMessage.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ServiceMessage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

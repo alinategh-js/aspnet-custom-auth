@@ -25,7 +25,7 @@ namespace Auth.Service.Implement
             };
         }
 
-        public async Task<ResponseModel<User>> Login(SignInModel model)
+        public async Task<IResponseModel<User>> Login(SignInRequest model)
         {
             var response = new ResponseModel<User>();
 

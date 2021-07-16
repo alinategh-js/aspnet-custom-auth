@@ -7,6 +7,6 @@ namespace Auth.Service.Interface
 {
     public interface IUserService
     {
-        Task<ResponseModel<User>> Login(SignInModel signInModel);
+        Task<IResponseModel<User>> Login(SignInRequest signInModel);
     }
 }

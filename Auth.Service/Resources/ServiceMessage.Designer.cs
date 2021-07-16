@@ -22,7 +22,7 @@ namespace Auth.Service.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ServiceMessage {
+    public class ServiceMessage {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Auth.Service.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Auth.Service.Resources.ServiceMessage", typeof(ServiceMessage).Assembly);
@@ -51,7 +51,7 @@ namespace Auth.Service.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Auth.Service.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Something went wrong, please try again later..
         /// </summary>
-        internal static string SomethingWentWrong {
+        public static string SomethingWentWrong {
             get {
                 return ResourceManager.GetString("SomethingWentWrong", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Auth.Service.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Successfuly done..
         /// </summary>
-        internal static string Success {
+        public static string Success {
             get {
                 return ResourceManager.GetString("Success", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Auth.Service.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Username or Password is wrong..
         /// </summary>
-        internal static string UsernameOrPasswordIsWrong {
+        public static string UsernameOrPasswordIsWrong {
             get {
                 return ResourceManager.GetString("UsernameOrPasswordIsWrong", resourceCulture);
             }

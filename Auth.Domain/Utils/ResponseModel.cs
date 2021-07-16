@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Auth.Domain.Utils
 {
-    public class ResponseModel<T>
+    public class ResponseModel<T> : IResponseModel<T>
     {
         public bool IsSuccessful { get; set; }
         public string Message { get; set; }
