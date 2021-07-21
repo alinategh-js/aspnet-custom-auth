@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Auth.Api.Filters;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Auth.Api.Controllers
         public StartController() { }
 
         [HttpGet]
+        [AuthorizeFilter]
         public IActionResult StartTest()
         {
             return Ok("Api is working.");

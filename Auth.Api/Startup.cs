@@ -1,3 +1,5 @@
+using Auth.Api.Middleware;
+using Auth.Api.Swagger;
 using Auth.Domain.Utils;
 using Auth.Service.Implement;
 using Auth.Service.Interface;
@@ -31,9 +33,17 @@ namespace Auth.Api
         {
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth.Api", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth.Api", Version = "v1" });
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                {
+                    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey
+                });
+                options.OperationFilter<DefaultHeaderFilter>();
             });
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
@@ -56,7 +66,7 @@ namespace Auth.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {

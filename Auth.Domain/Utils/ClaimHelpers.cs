@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Auth.Domain.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -17,6 +18,32 @@ namespace Auth.Domain.Utils
             var claims = DictionaryToClaims(dict);
 
             return claims;
+        }
+
+        public static User ToUser(this IEnumerable<Claim> claims)
+        {
+            if (claims == null) return new User();
+
+            var user = new User();
+            foreach (var claim in claims)
+            {
+                Type type = user.GetType();
+                PropertyInfo propertyInfo = type.GetProperty(claim.Type);
+                if(propertyInfo != null)
+                {
+                    if(propertyInfo.PropertyType == typeof(string))
+                    {
+                        propertyInfo.SetValue(user, claim.Value, null);
+                    }
+                    else if(propertyInfo.PropertyType == typeof(int))
+                    {
+                        propertyInfo.SetValue(user, int.Parse(claim.Value), null);
+                    }
+                }
+                    
+            }
+
+            return user;
         }
 
         private static Dictionary<string, object> DictionaryFromType(object atype)
